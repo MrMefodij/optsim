@@ -1,0 +1,96 @@
+[Global]
+Number 1000
+Index 1.0
+Scintillation organic 10000 2.1
+Cherenkov 300 600
+
+[Material]
+#ID	CADfile		material_type	refractive_index	attnuation_length(mm)	scattering_length(mm)
+#1	examples/sfgd_prototype/scintillator.stl	medium		1.592			30			0
+1	examples/sfgd_prototype/scintillator_3.stl	scintillator		1.592			90			0
+#3	examples/sfgd_prototype/reflector.stl diffuser #0.97 diffuser 0.03 absorber
+4	examples/sfgd_prototype/fiberx_0.stl	detector
+5	examples/sfgd_prototype/fiberx_1.stl	detector
+6	examples/sfgd_prototype/fiberx_2.stl	detector
+7	examples/sfgd_prototype/fiberx_3.stl	detector
+8	examples/sfgd_prototype/fiberx_4.stl	detector
+9	examples/sfgd_prototype/fiberx_5.stl	detector
+10	examples/sfgd_prototype/fiberx_6.stl	detector
+11	examples/sfgd_prototype/fiberx_7.stl	detector
+12	examples/sfgd_prototype/fiberx_8.stl	detector
+13	examples/sfgd_prototype/fiberx_9.stl	detector
+14	examples/sfgd_prototype/fiberx_10.stl	detector
+15	examples/sfgd_prototype/fiberx_11.stl	detector
+16	examples/sfgd_prototype/fiberx_12.stl	detector
+17	examples/sfgd_prototype/fiberx_13.stl	detector
+18	examples/sfgd_prototype/fiberx_14.stl	detector
+19	examples/sfgd_prototype/fiberx_15.stl	detector
+20	examples/sfgd_prototype/fiberx_16.stl	detector
+21	examples/sfgd_prototype/fiberx_17.stl	detector
+22	examples/sfgd_prototype/fiberx_18.stl	detector
+23	examples/sfgd_prototype/fiberx_19.stl	detector
+24	examples/sfgd_prototype/fiberx_20.stl	detector
+25	examples/sfgd_prototype/fiberx_21.stl	detector
+26	examples/sfgd_prototype/fiberx_22.stl	detector
+27	examples/sfgd_prototype/fiberx_23.stl	detector
+28	examples/sfgd_prototype/fiberx_24.stl	detector
+29	examples/sfgd_prototype/fibery_0.stl	detector
+30	examples/sfgd_prototype/fibery_1.stl	detector
+31	examples/sfgd_prototype/fibery_2.stl	detector
+32	examples/sfgd_prototype/fibery_3.stl	detector
+33	examples/sfgd_prototype/fibery_4.stl	detector
+34	examples/sfgd_prototype/fibery_5.stl	detector
+35	examples/sfgd_prototype/fibery_6.stl	detector
+36	examples/sfgd_prototype/fibery_7.stl	detector
+37	examples/sfgd_prototype/fibery_8.stl	detector
+38	examples/sfgd_prototype/fibery_9.stl	detector
+38	examples/sfgd_prototype/fibery_10.stl	detector
+40	examples/sfgd_prototype/fibery_11.stl	detector
+41	examples/sfgd_prototype/fibery_12.stl	detector
+42	examples/sfgd_prototype/fibery_13.stl	detector
+43	examples/sfgd_prototype/fibery_14.stl	detector
+44	examples/sfgd_prototype/fibery_15.stl	detector
+45	examples/sfgd_prototype/fibery_16.stl	detector
+46	examples/sfgd_prototype/fibery_17.stl	detector
+47	examples/sfgd_prototype/fibery_18.stl	detector
+48	examples/sfgd_prototype/fibery_19.stl	detector
+49	examples/sfgd_prototype/fibery_20.stl	detector
+50	examples/sfgd_prototype/fibery_21.stl	detector
+51	examples/sfgd_prototype/fibery_22.stl	detector
+52	examples/sfgd_prototype/fibery_23.stl	detector
+53	examples/sfgd_prototype/fibery_24.stl	detector
+54	examples/sfgd_prototype/fiberz_0.stl	detector
+55	examples/sfgd_prototype/fiberz_1.stl	detector
+56	examples/sfgd_prototype/fiberz_2.stl	detector
+57	examples/sfgd_prototype/fiberz_3.stl	detector
+58	examples/sfgd_prototype/fiberz_4.stl	detector
+59	examples/sfgd_prototype/fiberz_5.stl	detector
+60	examples/sfgd_prototype/fiberz_6.stl	detector
+61	examples/sfgd_prototype/fiberz_7.stl	detector
+62	examples/sfgd_prototype/fiberz_8.stl	detector
+63	examples/sfgd_prototype/fiberz_9.stl	detector
+64	examples/sfgd_prototype/fiberz_10.stl	detector
+65	examples/sfgd_prototype/fiberz_11.stl	detector
+66	examples/sfgd_prototype/fiberz_12.stl	detector
+67	examples/sfgd_prototype/fiberz_13.stl	detector
+68	examples/sfgd_prototype/fiberz_14.stl	detector
+69	examples/sfgd_prototype/fiberz_15.stl	detector
+70	examples/sfgd_prototype/fiberz_16.stl	detector
+71	examples/sfgd_prototype/fiberz_17.stl	detector
+72	examples/sfgd_prototype/fiberz_18.stl	detector
+73	examples/sfgd_prototype/fiberz_19.stl	detector
+74	examples/sfgd_prototype/fiberz_20.stl	detector
+75	examples/sfgd_prototype/fiberz_21.stl	detector
+76	examples/sfgd_prototype/fiberz_22.stl	detector
+77	examples/sfgd_prototype/fiberz_23.stl	detector
+78	examples/sfgd_prototype/fiberz_24.stl	detector
+
+[Particle]
+muon
+
+[Source]
+boxsurface 0 10 50 50 0 10
+
+[Direction]
+gauss 0 -1 0 2
+#flat 0 -1 0 0

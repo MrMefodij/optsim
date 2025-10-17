@@ -8,7 +8,7 @@
 class Material : public Geometry
 {
 public:
-  Material(std::mt19937& MT, int ID, std::string MATFILE, std::string TYPE, double INDEX, double ATTLEN, double SCATLEN);
+  Material(std::mt19937& MT, int ID, std::string MATFILE, std::string TYPE, double INDEX, double ATTLEN, double SCATLEN, double REFLECTIVITY);
   virtual ~Material();
   virtual int Type() const {return type;}
   virtual int TType() const {return type;}
@@ -16,11 +16,13 @@ public:
   double Index() const {return index;}
   double AttLen() const {return attlen;}
   double ScatLen() const {return scatlen;}
+  double Reflectivity() const {return reflectivity;}
   virtual bool Is_Scinti() const {return is_scinti;}
 
 private:
   int id, type;
   double index, attlen, scatlen;
+  double reflectivity;
   bool is_scinti;
 };
 

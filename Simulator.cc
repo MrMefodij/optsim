@@ -321,8 +321,13 @@ void Simulator::Run(){//Run simulation
 	    nref++;
 	  }
 	  else if(btype == 3){
-	    Lambert(vec,newvec,newpol,normal);//Diffusion following the Lambert's cosine law
-	    nref++;
+	  	double reflectivity = mat[newmn]->Reflectivity();
+	  	auto rand = unirand(mt);
+	  	// std:: cout << "rand: " << rand << " refl: " << reflectivity <<std::endl;
+	  	if(rand < reflectivity){
+	  		Lambert(vec,newvec,newpol,normal);//Diffusion following the Lambert's cosine law
+	  	}
+	  	nref++;
 	  }
 	  Normalize(newvec);
 	  Normalize(newpol);

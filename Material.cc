@@ -1,11 +1,12 @@
 #include "Material.hh"
 
-Material::Material(std::mt19937& MT, int ID, std::string MATFILE, std::string TYPE, double INDEX=1, double ATTLEN=0, double SCATLEN=0)
+Material::Material(std::mt19937& MT, int ID, std::string MATFILE, std::string TYPE, double INDEX=1, double ATTLEN=0, double SCATLEN=0, double REFLECTIVITY=1.0)
   : Geometry(MT),
     id(ID),
     index(INDEX),
     attlen(ATTLEN),
     scatlen(SCATLEN),
+    reflectivity(REFLECTIVITY),
     is_scinti(false)    
 {
   if(id<=0){
@@ -46,14 +47,23 @@ Material::Material(std::mt19937& MT, int ID, std::string MATFILE, std::string TY
       exit(1);
     }
   }
+
+  if(type==2 || type==3){
+    if(reflectivity<0 || reflectivity>1){
+      std::cerr<<"Error: Reflectivity: "<<REFLECTIVITY<<" for ID="<<ID<<" is invalid."<<std::endl;
+      std::cerr<<"Reflectivity must be between 0 and 1."<<std::endl;
+      exit(1);
+    }
+  }
   
   LoadCAD(MATFILE);
   
   std::cout<<"Material ID="<<ID<<", File="<<MATFILE<<", Type="<<TYPE;
-  if(type==0 || type==1 || type==6){
+  if(type==0 || type==1 || type==6 || type==3){
     std::cout<<" (Index="<<INDEX;
     if(ATTLEN>0)std::cout<<", Att.length="<<ATTLEN<<"mm";
-    if(SCATLEN>0)std::cout<<", Scat.length="<<SCATLEN<<"mm";    
+    if(SCATLEN>0)std::cout<<", Scat.length="<<SCATLEN<<"mm";
+    if(REFLECTIVITY>0)std::cout<<", reflectivity="<<REFLECTIVITY<<"mm";
     std::cout<<")";
   }
   std::cout<<" was added."<<std::endl;

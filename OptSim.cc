@@ -44,7 +44,7 @@ std::vector<Material*> CofigMaterials(std::mt19937 mt, Config config){
   std::vector<Material*> materials;
   std::string matfile;
   int id;
-  double index, attlen, scatlen;
+  double index, attlen, scatlen, reflectivity;
   for(std::map<std::string, std::string>::iterator i = config["Material"].begin(); i != config["Material"].end(); i++){
     std::istringstream(i->first) >> id;
     std::istringstream ss(i->second);
@@ -73,15 +73,15 @@ std::vector<Material*> CofigMaterials(std::mt19937 mt, Config config){
         ss.seekg((int)ss.tellg() - (int)elem.length());
       }
       // Initialize material property values
-      index=1; attlen=0; scatlen=0;
-      ss >> index >> attlen >> scatlen;
-      Material *mat = new Mixture(mt, id, matfile, mix, index, attlen, scatlen);
+      index=1; attlen=0; scatlen=0; reflectivity=0;
+      ss >> index >> attlen >> scatlen >> reflectivity;
+      Material *mat = new Mixture(mt, id, matfile, mix, index, attlen, scatlen, reflectivity);
       materials.push_back(mat);
     } else {
       // Process as a normal (single) Material
-      index=1; attlen=0; scatlen=0;
-      ss >> index >> attlen >> scatlen;
-      Material *mat = new Material(mt, id, matfile, elem, index, attlen, scatlen);
+      index=1; attlen=0; scatlen=0; reflectivity=0;
+      ss >> index >> attlen >> scatlen >> reflectivity;
+      Material *mat = new Material(mt, id, matfile, elem, index, attlen, scatlen, reflectivity);
       materials.push_back(mat);
     }
   }

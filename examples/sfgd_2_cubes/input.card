@@ -1,0 +1,24 @@
+[Global]
+Number 100000
+Index 1.0
+Scintillation organic 1000 2.1
+Cherenkov 300 600
+
+[Material]
+#ID	CADfile		material_type	refractive_index	attnuation_length(mm)	scattering_length(mm)
+1	examples/sfgd_2_cubes/scintillator.stl	scintillator 1.592			30			0			1.0
+2	examples/sfgd_2_cubes/reflector.stl diffuser 1.592			2			0			0.97
+3	examples/sfgd_2_cubes/fiberx.stl	detector
+4	examples/sfgd_2_cubes/fibery.stl	detector
+5	examples/sfgd_2_cubes/fiberz.stl	detector
+
+[Particle]
+#photon
+muon
+
+[Source]
+#CADvolume 	examples/sfgd_cube/scintillator.stl
+boxsurface 0 10 50 50 0 10
+
+[Direction]
+gauss 0 -1 0 2
